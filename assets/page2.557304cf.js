@@ -1,0 +1,1 @@
+import{_ as t,o,c as s,b as e}from"./index.563a0e2e.js";const a={},c=e("h1",null,"page2",-1),n=e("iframe",{width:"100%",height:"700",src:"https://www.kakaocorp.com/page/news"},null,-1),r=[c,n];function _(p,i,d,l,h,f){return o(),s("div",null,r)}var m=t(a,[["render",_]]);export{m as default};

@@ -1,0 +1,1 @@
+import{_ as o,o as t,c as a,b as e}from"./index.563a0e2e.js";const s={},c=e("h1",null,"main",-1),n=e("iframe",{width:"100%",height:"700",src:"https://www.kakaocorp.com/page/kakao/history"},null,-1),r=[c,n];function _(i,p,d,h,l,m){return t(),a("div",null,r)}var u=o(s,[["render",_]]);export{u as default};

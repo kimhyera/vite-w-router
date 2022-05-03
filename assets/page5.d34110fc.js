@@ -1,0 +1,1 @@
+import{_ as t,o,c as s,b as e}from"./index.563a0e2e.js";const a={},c=e("h1",null,"page5",-1),r=e("iframe",{width:"100%",height:"700",src:"https://vibe.naver.com/chart"},null,-1),n=[c,r];function _(i,p,d,h,l,f){return o(),s("div",null,n)}var m=t(a,[["render",_]]);export{m as default};
