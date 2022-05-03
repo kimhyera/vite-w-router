@@ -1,0 +1,1 @@
+import{_ as s,o as t,c as o,b as e}from"./index.2d9dd96a.js";const c={},a=e("h1",null,"page3",-1),n=e("iframe",{width:"100%",height:"700",src:"https://ant.design/docs/resources"},null,-1),r=[a,n];function _(d,i,p,l,h,u){return t(),o("div",null,r)}var m=s(c,[["render",_]]);export{m as default};
