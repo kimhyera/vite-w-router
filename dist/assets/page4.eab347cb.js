@@ -1,0 +1,1 @@
+import{_ as t,o as s,c as o,b as e}from"./index.563a0e2e.js";const a={},c=e("h1",null,"page4",-1),n=e("iframe",{width:"100%",height:"700",src:"https://vibe.naver.com/new-release-album/domestic"},null,-1),r=[c,n];function _(i,l,d,p,h,m){return s(),o("div",null,r)}var f=t(a,[["render",_]]);export{f as default};
