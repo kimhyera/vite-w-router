@@ -65,8 +65,8 @@
         <main class="contents">
 
             <router-view v-slot="{ Component }">
-                <transition appear :name="routerAnimation" mode="out-in">
-
+                <transition mode="out-in" name="custom-classes" enter-active-class="router-animation-enter-active"
+                    leave-active-class="router-animation-leave-active">
                     <component :is="Component"></component>
                 </transition>
 
@@ -81,27 +81,6 @@ import { computed, defineComponent, ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 export default defineComponent({
-    data() {
-        return {
-            routerAnimation: "slide-fade",
-        };
-    },
-
-    watch: {
-        $route(to, from) {
-            const toDepth = to.path === "/" ? 1 : to.path.split("/").length;
-            const fromDepth = from.path === "/" ? 1 : from.path.split("/").length;
-            this.routerAnimation = toDepth < fromDepth ? "slide-right" : "slide-left";
-            console.log(
-                to.path,
-                toDepth,
-                from.path,
-                fromDepth,
-                "apply ",
-                this.routerAnimation
-            );
-        },
-    },
 
     setup() {
         const route = useRoute();
@@ -146,7 +125,7 @@ export default defineComponent({
 }
 
 .contents {
-    padding: 30px 0;
+    padding: 30px;
 }
 
 a {
@@ -204,7 +183,7 @@ a.router-link-active {
 }
 
 .router-animation-leave-active {
-    animation: going 0.3s;
+    animation: going 0.5s;
     opacity: 0;
 }
 
