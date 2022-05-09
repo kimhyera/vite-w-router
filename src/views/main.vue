@@ -58,8 +58,14 @@ export default {
                 type: 'confirm',
                 title: '제목',
                 message: '상세',
-                focus: '.input-form',
-                gotoLink: ''
+                // focus: '.input-form',
+                // gotoLink: '',
+                callback: () => {
+
+                    input1.value.focus();
+
+                    // router.push('/page2');
+                }
 
             })) {
                 alert('y')

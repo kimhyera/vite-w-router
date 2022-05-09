@@ -65,31 +65,28 @@ export default {
 		});
 
 
-		function onFocus() {
+		// function onFocus() {
 
-			if (modal.value.focus !== '') {
+		// 	if (modal.value.focus !== '') {
 
-				const input = modal.value.focus;
-				document.querySelector(input).focus();
+		// 		const input = modal.value.focus;
+		// 		document.querySelector(input).focus();
 
-			}
+		// 	}
 
 
-		}
+		// }
 
 
 
 		const onCloseMoal = () => {
-			console.log('asdfa');
 
-			console.log(modal);
-			onFocus();
+			// onFocus();
 
 
+			if (modal.value.callback !== '') {
 
-			if (modal.value.gotoLink !== '') {
-
-				router.push(modal.value.gotoLink);
+				modal.value.callback();
 
 			}
 

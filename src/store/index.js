@@ -11,7 +11,8 @@ export const store = createStore({
             message: '',
             focus: '',
             gotoLink: '',
-            confirm: false
+            confirm: false,
+            callback: () => { }
         }
     }),
     mutations: {
@@ -22,7 +23,10 @@ export const store = createStore({
             state.modal.message = action.message !== undefined ? action.message : '';
             state.modal.focus = action.focus !== undefined ? action.focus : '';
             state.modal.gotoLink = action.gotoLink !== undefined ? action.gotoLink : '';
-            state.modal.confirm = action.confirm !== undefined ? action.confirm : false;
+            state.modal.confirm = action.confirm !== undefined ? action.confirm : () => { };
+
+            state.modal.callback = action.callback !== undefined ? action.callback : 'asdf';
+
 
 
 
@@ -44,9 +48,7 @@ export const store = createStore({
     actions: {
         modalOpen(context, modal) {
             context.commit("MODAL_OPEN", modal)
-
             console.log('context', context.state.modal.confirm);
-
             return context.state.confirm
 
         },
