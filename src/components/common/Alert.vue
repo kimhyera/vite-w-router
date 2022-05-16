@@ -6,21 +6,21 @@
 				<div class="modal-container">
 			
 					<div class="modal-header">
-						{{modal.title}}
+						{{title}}
 					</div>
 
 					<div class="modal-body">
-							{{modal.message}}
+							{{message}}
 					</div>
 
 					<div class="modal-footer">
 							<button class="modal-default-button" @click="onCloseMoal">
 								예
 							</button>
-
-						   <button v-if="modal.type === 'confirm'" class="modal-default-button" @click="gotoNo">
+<!-- 
+						   <button v-if="type === 'confirm'" class="modal-default-button" @click="gotoNo">
 								아니요
-							</button>
+							</button> -->
 
              <!-- <input type="text" class="input-form" ref="input1"> -->
 
@@ -84,7 +84,7 @@ export default {
 			// onFocus();
 
 
-			if (modal.value.callback !== '') {
+			if (callback !== '') {
 
 				modal.value.callback();
 
