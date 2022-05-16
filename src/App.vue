@@ -2,16 +2,17 @@
 <template>
   <router-view />
 
-  <Alert v-if="modal.isShow"></Alert>
+  <Alert v-if="isShow"></Alert>
 </template>
 
 <script>
 
 import { reactive, ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
-import { useStore } from 'vuex'
+// import { useStore } from 'vuex'
 
 
+import { useModal } from './compositions/modal.js'
 import Alert from './components/common/Alert.vue';
 export default {
   components: {
@@ -21,11 +22,15 @@ export default {
   setup() {
 
 
-    const store = useStore()
+    // const store = useStore()
+    // const modal = computed(() => store.state.modal);
 
-    const modal = computed(() => store.state.modal);
+    const {
+      isShow
+    } = useModal()
 
-    return { modal }
+
+    return { isShow }
 
   }
 

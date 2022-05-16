@@ -23,7 +23,9 @@
 import { reactive, ref, computed } from 'vue';
 
 import { useRouter } from 'vue-router';
-import { useStore } from 'vuex'
+// import { useStore } from 'vuex'
+
+import { useModal } from '../compositions/modal.js'
 
 
 
@@ -31,12 +33,16 @@ export default {
     setup(props) {
         const router = useRouter();
 
-        const store = useStore()
+        // const store = useStore()
 
 
 
 
         const input1 = ref(null)
+
+        const {
+            alertShow
+        } = useModal()
 
 
 
@@ -53,25 +59,27 @@ export default {
         function onClick() {
 
 
-            if (store.dispatch('modalOpen', {
-                isShow: true,
-                type: 'confirm',
-                title: '제목',
-                message: '상세',
-                // focus: '.input-form',
-                // gotoLink: '',
-                callback: () => {
+            // if (store.dispatch('modalOpen', {
+            //     isShow: true,
+            //     type: 'confirm',
+            //     title: '제목',
+            //     message: '상세',
+            //     // focus: '.input-form',
+            //     // gotoLink: '',
+            //     callback: () => {
 
-                    input1.value.focus();
+            //         input1.value.focus();
 
-                    // router.push('/page2');
-                }
+            //         // router.push('/page2');
+            //     }
 
-            })) {
-                alert('y')
-            } else {
-                alert('no')
-            }
+            // })) {
+            //     alert('y')
+            // } else {
+            //     alert('no')
+            // }
+
+            alertShow('메세지');
 
 
         }
