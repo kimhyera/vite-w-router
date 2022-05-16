@@ -1,7 +1,7 @@
 
 <script setup>
 
-import { reactive, ref, computed } from 'vue';
+import { reactive, inject, ref, computed } from 'vue';
 
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex'
@@ -11,15 +11,17 @@ import { useStore } from 'vuex'
 
 const router = useRouter();
 
-const store = useStore()
+
+const showConfirm = inject("showConfirm")
 
 
 function onClick() {
-    store.dispatch('modalOpen', {
-        isShow: true,
-        message: '메세지만 알럿'
 
-    })
+
+
+
+
+    showConfirm('', '메세지만 알럿!!!')
 }
 
 

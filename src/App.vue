@@ -1,36 +1,56 @@
 
 <template>
   <router-view />
-
-  <Alert v-if="isShow"></Alert>
+  <Modal v-if="isModal"></Modal>
+  <ConFirm v-if="isConFirm"></ConFirm>
 </template>
 
 <script>
 
-import { reactive, ref, computed } from 'vue';
-import { useRouter } from 'vue-router';
+import { provide } from 'vue';
 // import { useStore } from 'vuex'
 
 
 import { useModal } from './compositions/modal.js'
-import Alert from './components/common/Alert.vue';
+import Modal from './components/common/Modal.vue';
+import ConFirm from './components/common/ConFirm.vue';
 export default {
   components: {
     //컴포넌트 태그명: 컴포넌트 내용
-    Alert: Alert,
+    Modal: Modal,
+    ConFirm: ConFirm
   },
   setup() {
 
 
-    // const store = useStore()
-    // const modal = computed(() => store.state.modal);
 
     const {
-      isShow
+      title,
+      message,
+      isConFirm,
+      showConfirm,
+      isModal,
+      confirm,
+      showModal,
+      closeModal,
+
     } = useModal()
 
+    provide("isModal", isModal)
+    provide("isConFirm", isConFirm)
+    provide("showModal", showModal)
+    provide("closeModal", closeModal)
+    provide("showConfirm", showConfirm)
+    provide("title", title)
+    provide("message", message)
+    provide("confirm", confirm)
 
-    return { isShow }
+
+
+
+    return { isModal, isConFirm }
+
+
 
   }
 

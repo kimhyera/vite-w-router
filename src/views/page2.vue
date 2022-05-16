@@ -10,7 +10,7 @@
     </div>
 </template>
 <script>
-import { reactive, ref, computed } from 'vue';
+import { reactive, ref, inject } from 'vue';
 
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex'
@@ -24,18 +24,21 @@ export default {
         const store = useStore()
         const input2 = ref(null)
 
+        const showModal = inject("showModal")
+
 
         function onClick() {
-            store.dispatch('modalOpen', {
-                isShow: true,
-                title: '타이틀',
-                message: '다시 눌러주세요',
-                callback: () => {
-                    input2.value.focus();
-                    // router.push('/page3');
-                }
 
-            })
+
+
+            function callback() {
+                input2.value.focus();
+                router.push('/page3');
+            }
+
+
+            showModal('제목제목2', 'ㅇㅇㅇㅇ2', callback)
+
         }
 
         return {
