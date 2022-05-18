@@ -19,12 +19,12 @@ const routes = [
                 component: () => import('../views/page1.vue'),
             },
             {
-                path: '/page2',
+                path: '/page2/:id',
                 name: 'Page2',
                 component: () => import('../views/page2.vue'),
             },
             {
-                path: '/Page3',
+                path: '/Page3/:id',
                 name: 'Page3',
                 component: () => import('../views/page3.vue'),
             },

@@ -42,7 +42,7 @@
                 </li>
 
                 <li class="col">
-                    <router-link to="/page2">page2</router-link>
+                    <router-link to="/page2">메뉴</router-link>
 
                 </li>
 
